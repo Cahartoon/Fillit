@@ -3,7 +3,7 @@
 
 int		main(int argc, const char *argv[])
 {
-	f_list	*liste;
+	f_list	*lst;
 	char	**board;
 
 	if (!ft_validread(argv[1]))
@@ -11,21 +11,15 @@ int		main(int argc, const char *argv[])
 		ft_putendl("error");
 		return (0);
 	}
-	liste = ft_flstset(ft_parse(argv[1]));
-	board = ft_setboard(ft_biggestsqrt(4 * ft_piececount(liste)));
-	while (liste->next)
+	lst = ft_flstset(ft_parse(argv[1]));
+	if (ft_testbarre(lst))
+		board = ft_setboard(ft_testbarre(lst));
+	else
+		board = ft_setboard(ft_biggestsqrt(4 * ft_piececount(lst)));
+	while (!ft_backtracking(board, lst, 0, 0))
 	{
-		ft_puttab(liste->piece);
-		ft_putchar(liste->letter);
-		ft_putstr("\nwidth : ");
-		ft_putnbr(liste->width);
-		ft_putstr("   height : ");
-		ft_putnbr(liste->height);
-		ft_putendl("\n");
-		liste = liste->next;
+		board = ft_setboard(ft_tablen(board) + 1);
 	}
 	ft_puttab(board);
-	ft_putchar('\n');
-	ft_putendl("valid");
 	return (0);
 }

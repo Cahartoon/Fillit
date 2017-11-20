@@ -19,9 +19,7 @@ int		ft_validread(const char *file)
 		{
 			i++;
 			if (!ft_validblock(buffer, ret))
-			{
 				return (0);
-			}
 		}
 		ft_bzero(buffer, 22);
 	}

@@ -28,5 +28,10 @@ int					ft_tablen(char **tab);
 char				**ft_setboard(int size);
 int					ft_biggestsqrt(int n);
 char				**ft_str_to_tab(char *str);
+int					ft_tabtab(char **board, f_list *lst, int x, int y);
+void				ft_putpiece(char **board, f_list *lst, int x, int y);
+void				ft_deletepiece(char **board, f_list *lst);
+int					ft_backtracking(char **board, f_list *lst, int x, int y);
+int					ft_testbarre(f_list *lst);
 
 #endif
