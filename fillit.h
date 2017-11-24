@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fillit.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: edinguim <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/11/24 19:14:00 by edinguim          #+#    #+#             */
+/*   Updated: 2017/11/24 19:15:23 by edinguim         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FILLIT_H
 # define FILLIT_H
 # include <sys/types.h>
@@ -14,6 +26,7 @@ typedef struct		s_piece
 	struct s_piece	*next;
 }					f_list;
 
+int					ft_checkfile(const char *file);
 int					ft_validread(const char *file);
 int					ft_validblock(char *buffer, int size);
 int					ft_validcontent(char *buffer, int size);
